@@ -1,1 +1,43 @@
-<h1>Demo</h1>
+<html>
+	<body ontouchstart="">
+		<div id="content">
+			<title>Cloud: Instagram</title>
+			<div id="head">
+				<h1 onclick="window.location.reload()">Instagram</h1>
+			</div>
+            <div id="frame"></div>
+            <script type="module">
+
+                renderGUI();
+
+                Essentials.showContent();
+
+            </script>
+            <script>
+
+                function renderGUI()
+                {
+                    var iframe = document.createElement('iframe');
+
+                    iframe.src = 'https://www.instagram.com/';
+
+                    iframe.setAttribute('sandbox', 'allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-same-origin allow-scripts allow-top-navigation allow-top-navigation-by-user-activation');
+                    iframe.setAttribute('referrerpolicy', 'origin-when-cross-origin');
+                    iframe.setAttribute('data-instgrm-payload-id', 'instagram-media-payload-0');
+
+                    document.getElementById('frame').appendChild(iframe);
+                }
+
+            </script>
+            <style>
+
+                iframe
+                {
+                    width: 100%;
+                    height: calc(100% - 144px);
+                }
+
+            </style>
+        </div>
+    </body>
+</html>
